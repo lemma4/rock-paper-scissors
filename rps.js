@@ -13,12 +13,13 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  let choice = prompt("Play Rock, Paper, Scissors with me: ");
-  if (choice === "rock" || choice === "Rock") {
-    return "Rock";
-  } else if (choice === "paper" || choice === "Paper") {
+   let choice = prompt("Play Rock, Paper, Scissors with me: ");
+   let choiceLowerCase = choice.toLowerCase();
+   if (choiceLowerCase === "rock") {
+   return "Rock";
+  } else if (choiceLowerCase === "paper") {
     return "Paper";
-  } else if (choice === "scissors" || choice === "Scissors") {
+  } else if (choiceLowerCase === "scissors") {
     return "Scissors";
   } else {
     return "Invalid choice";
