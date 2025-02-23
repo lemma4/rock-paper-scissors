@@ -25,3 +25,6 @@ function getHumanChoice() {
     return "Invalid choice";
 }
 }
+
+let humanScore, computerScore = 0;
+
