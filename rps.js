@@ -1,11 +1,11 @@
 function getComputerChoice() {
     let outcome = Math.random();
     if (outcome < 0.33) {
-        return "Rock";
+        return "rock";
     }   else if (0.33 <= outcome && outcome < .66) {
-        return "Paper";
+        return "paper";
     }   else if (outcome >= 0.66) {
-        return "Scissors";
+        return "scissors";
     }   else {
         return outcome.valueOf();
     }
@@ -16,15 +16,44 @@ function getHumanChoice() {
    let choice = prompt("Play Rock, Paper, Scissors with me: ");
    let choiceLowerCase = choice.toLowerCase();
    if (choiceLowerCase === "rock") {
-   return "Rock";
+   return "rock";
   } else if (choiceLowerCase === "paper") {
-    return "Paper";
+    return "paper";
   } else if (choiceLowerCase === "scissors") {
-    return "Scissors";
+    return "scissors";
   } else {
     return "Invalid choice";
 }
 }
 
-let humanScore, computerScore = 0;
+let humanScore = 0;
+let computerScore = 0;
 
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) {
+        console.log("It's a tie! Let's try again!");
+    } else if (humanChoice === 'rock' && computerChoice === 'paper') {
+        computerScore += 1;
+        console.log('You lose! Paper beats rock.');
+    } else if (humanChoice === 'rock' && computerChoice === 'scissors') {
+        humanScore += 1;
+        console.log('You win! Rock beats scissors.');
+    } else if (humanChoice === 'paper' && computerChoice === 'rock') {
+        humanScore += 1;
+        console.log('You win! Paper beats rock.');
+    } else if (humanChoice === 'paper' && computerChoice === 'scissors') {
+        computerScore += 1;
+        console.log('You lose! Scissors beat paper.');
+    } else if (humanChoice === 'scissors' && computerChoice === 'rock') {
+        computerScore += 1;
+        console.log('You lose! Rock beats scissors.');
+    } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
+        humanScore += 1;
+        console.log('You win! Scissors beat paper.');
+    } else {
+        console.log('Something went wrong.');
+    }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
