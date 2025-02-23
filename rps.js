@@ -11,3 +11,16 @@ function getComputerChoice() {
     }
 
 }
+
+function getHumanChoice() {
+  let choice = prompt("Play Rock, Paper, Scissors with me: ");
+  if (choice === "rock" || choice === "Rock") {
+    return "Rock";
+  } else if (choice === "paper" || choice === "Paper") {
+    return "Paper";
+  } else if (choice === "scissors" || choice === "Scissors") {
+    return "Scissors";
+  } else {
+    return "Invalid choice";
+}
+}
